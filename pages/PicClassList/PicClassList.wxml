@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="page-zlSer w100">
+    <view class="HeadTit">
+        <text>{{teacherName}}</text>老师
+    </view>
+    <view class="setCon" wx:if="{{kindShow}}">
+        <text class="windBtn-a" bindtap='modelpop2'>{{yearname}}</text>
+        <text class="windBtn-b" bindtap="modelpop">{{sjname}}</text>
+    </view>
+    <view class="list">
+      <view class='grid' wx:for="{{classes}}" wx:key="{{item.id}}">
+        <view class="grade-item" bindtap="select" data-id="{{index}}" data-text="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <view wx:if="{{!kindShow}}" class="kindShow">抱歉！您没有权限查看此页</view>
+  </view>
+
+  <!--年份-->
+  <modal class="mode" hidden="{{hidden2}}" bindtap="cancel2" confirm-text="" cancel-text="">
+    <radio-group bindchange="radioChange">
+          <label class="flex" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view>
+              <radio value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="flex__item">{{item.yearname}}</view>
+          </label>
+        </radio-group> 
+  </modal>
+  <!--季节-->
+  <modal class="mode" hidden="{{hidden}}" bindtap="cancel" confirm-text="" cancel-text="">
+    <radio-group bindchange="radioChange2">
+      <label class="flex" wx:for="{{items2}}" wx:key="{{item.value}}">
+        <view>
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>
+        </view>
+        <view class="flex__item">{{item.sjname}}</view>
+      </label>
+    </radio-group> 
+  </modal>
+
+   <!--课节-->
+  <modal class="mode" hidden="{{hidden3}}" bindtap="cancel3" confirm-text="" cancel-text="">
+    <radio-group bindchange="radioChange3">
+      <label class="flex" wx:for="{{items3}}" wx:key="{{item.value}}">
+        <view>
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>
+        </view>
+        <view class="flex__item">{{item.name}}</view>
+      </label>
+    </radio-group> 
+  </modal>
+
+
+
+</view>

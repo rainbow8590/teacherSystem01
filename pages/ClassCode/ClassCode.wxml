@@ -1,0 +1,7 @@
+<!--图片-->
+<view class="container">
+   <image style="width:{{windowWidth}}px;height:{{imageH*windowWidth/imageW}}px" mode="aspectFit" src="{{src}}" bindtap="seeImg" bindload="loadImg"></image>
+ <!--  <modal class="mode" hidden="{{hidden}}" data-id="father" bindtap="hideModal" confirm-text="" cancel-text="">
+   <view class="flex__item" data-id="son"  bindtap="editImg">保存到手机相册</view>
+ </modal> -->
+</view>

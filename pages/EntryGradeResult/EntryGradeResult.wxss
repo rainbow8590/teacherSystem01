@@ -1,0 +1,182 @@
+page{
+  position: relative;
+  width: 100%;
+  height: 100%; 
+}
+view{
+  padding: 0;
+  margin: 0;
+}
+.head {background: #74acd9;padding:25px 0 20px 0;z-index: 9999;width: 100%;height:75px;}
+.head text {background: rgba(255,255,255,.2);padding: 5px 10px;height:20px;line-height:20px;color: #fff;border-radius: 25px;margin: 0 0 10px 20px;display: inline-block;font-size: 13px;}
+
+.table {width: 100%; height: 100%; text-align: center;}
+
+/* .thead {padding: 8px 0;text-align: center;} */
+.table{flex: 1;flex-direction: column; position: static;}
+/*.thead view{
+  display:inline-block;
+  height: 20px;
+  width: 65px;
+}*/
+.thead-left{
+  width: 165px;
+  padding: 8px 0;
+  z-index: 100;
+  background: rgba(255,255,255,1);
+}
+.thead-right{
+  position: relative;
+}
+.thead-right .thead-right-wrap{
+  width: 1500px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.thead .set{
+  height: 20px;
+  line-height: 20px;
+  width: 85px;
+  text-align: center;
+  position: relative;
+}
+.thead .school{
+  height: 20px;
+  line-height: 20px;
+  width: 180px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.thead .name{
+  height: 20px;
+  line-height: 20px;
+  width: 80px;
+  text-align: center;
+}
+
+.tbody{
+  border-bottom: 1px solid #e7e7e7;
+}
+.tbody .tbody-fixed{
+  width: 165px;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+}
+.tbody-fixed-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.tbody-left{
+  padding: 8px 0;
+  width: 165px;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  background: rgba(255,255,255,1);
+}
+
+.scrollCon{
+  width: 100%;
+  overflow: hidden;
+}
+.scroll-item{
+  display: flex;
+  height: 100%;
+}
+.tbody-scroll{
+  flex: 1;
+  position: relative;
+}
+.tbody-scroll-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.tbody-right{
+  width: 100%;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #ddd;
+  justify-content: flex-start;
+}
+.tbody-right view{
+  height: 20px;
+}
+.tbody-scroll-content wx-view {
+  /*padding: 8px 0;*/
+}
+.tbody-scroll-content .tbody-right view {
+  padding:8px 0;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.sideBar{
+  width:100%; 
+  overflow:hidden;
+  flex-wrap:nowrap;
+  border-bottom: 1px solid #eade98;
+}
+
+.tip{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  padding: 2px;
+  border: 1px solid #eade98;
+  font-size: 8px;
+  border-radius: 80%;
+  background: #eade98;
+  min-width: 50px;
+  min-height: 100%;
+}
+.bdr1{
+  position: absolute;
+  right: 50%;
+  margin-right: -6px;
+  bottom: -12px;
+  border: 6px solid #eade98;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;  
+  z-index: 1200;
+}
+.tip1{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -45px;
+  padding: 2px;
+  border: 1px solid #eade98;
+  font-size: 8px;
+  border-radius: 80%;
+  background: #eade98;
+  min-width: 50px;
+  min-height: 100%;
+  z-index: 1000;
+}
+.bdr1_1{
+  position: absolute;
+  right: 50%;
+  margin-right: -6px;
+  top: -12px;
+  border: 6px solid #eade98;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;  
+  z-index: 1200;
+}
+.tipShow{
+  display: block;
+}
+.tipHide{
+  display: none;
+}

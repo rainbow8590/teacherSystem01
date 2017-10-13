@@ -1,0 +1,87 @@
+<!--pages/ClassCode/ClassCode.wxml-->
+<view class='container page-chengji'>
+  <view class="head">
+     <text wx:for="{{headList}}" wx:key="{{item}}">{{item}}</text> 
+  </view>
+
+  <view class='table'>
+    <view class='thead'>
+      <view>姓名</view>
+      <view wx:if="{{isShow}}">实验班</view>
+      <view class="set">学区/就读学校</view>
+     <!--  <view>学过奥数</view> -->
+    </view> 
+    <form bindsubmit="saveStudent">
+    <view class='tbody'>
+     
+      <view class="stu" wx:for="{{schoollist}}" >
+        <view>{{item.sName}}</view>
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sStudentCode]" value="{{item.sStudentCode}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sDistrict]" value="{{item.schoolDistrict}}" />
+  <!--       <input type="hidden" class="hidInp"  value="{{item.sExperimentalType}}" /> -->
+          <view class="data cell_bd" wx:if="{{isShow}}">
+            <picker bindchange="bindPickerChange" range="{{array1}}" value="{{item.index1}}" data-current="{{index}}">
+              <view class="weui-input picker-inner">{{array1[item.index1]}}</view>
+            </picker>
+        </view>
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sExperimentalType]" value="{{item.sExperimentalType}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][nSchoolID]" value="{{item.schoolId}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][nXueBu]" value="{{item.nXueBu}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][school]" value="{{item.sSchoolName}}"   />
+        <view class="set cell_bd" data-id="{{index}}" wx:key="item.id">
+          <view class="cell_text"  data-curid="{{index}}" catchtap="modelpop">{{item.sSchoolName}}</view>
+        </view>
+  
+        <!-- <view class="cell_bd">
+           <picker bindchange="bindPicker2Change" value="{{item.index2}}" range="{{item.array2}}" data-current="{{index}}">
+              <text class="weui-input">{{item.array2[item.index2]}}</text>
+            </picker>
+        </view> -->
+      </view>
+    </view>
+    <view class="button tac">
+      <button id="save" class="btn btn2" formType="submit">确认 </button>
+    </view>
+    </form>
+  </view>
+  
+  <!--学校弹出框-->
+  <modal class="model" hidden="{{hidden}}" confirm-text="" cancel-text="" id="hideM" catchtap="hideModel">
+    <view class="schoolList" data-show="schoolList" id="hideD" >
+        
+        <view class='otherSchool'>
+          <view class="hide {{showView?'view_show':''}}">
+            <input id="searchother" type='text' value='{{value}}' placeholder='{{writeSchool}}' bindinput="otherschool"></input>
+            <button id="searchotherbtn" class='btn' bindtap="othercancel" bindinput="schoolbtn">确定</button>
+          </view>
+        </view>
+
+        <view class="school {{showView?'view_show':''}}">
+          <view class="hdSearch flex">
+            <input id="search" type="text" value="{{value1}}" catchfocus='keep' bindinput='selectName' placeholder="搜索学校名称" />
+          </view>
+          <view class="schoollist">
+          <view id="other" bindtap="openSchool" data-schoolname="">{{othername}}</view>
+          <view class="c" wx:for="{{setSchoolList}}" wx:key="{{item}}" bindtap="cancel" id="hideS" data-schoolid="{{item.schoolId}}" data-schooldistrict="{{item.schoolDistrict}}" data-schoolname="{{item.schoolName}}">{{item.schoolName}}</view>
+          </view>
+        </view>
+    </view>
+  </modal>
+  <!--弹出框结束-->
+
+  <!-- 实验班弹出框 -->
+ <!--  <modal class="model" hidden="{{hiddenclass}}" confirm-text="" cancel-text="">
+    <view class="schoolList">
+      <view class="school {{showView?'view_show':''}}">
+        <view class="hdSearch flex">
+          <input id="search" type="text" value="" bindfocus="clearSchool" bindinput='selectName' placeholder="搜索学校名称" />
+        </view>
+        <view class="schoollist">
+        <view id="other" bindtap="openSchool" data-schoolname="">{{othername}}</view>
+        <view class="c" wx:for="{{setSchoolList}}" wx:key="{{item}}" bindtap="cancel" data-schoolname="{{item}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </modal> -->
+
+</view>

@@ -1,0 +1,8 @@
+/* pages/ClassCode/ClassCode.wxss */
+
+.container{
+  background: #f6f6f6;
+}
+image{
+  width: 100%;
+}

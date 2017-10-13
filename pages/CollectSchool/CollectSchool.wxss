@@ -1,0 +1,55 @@
+.head {background: #74acd9;padding:25px 0 20px 0;position: relative;z-index: 9999;width: 100%;height:75px;}
+.head text {background: rgba(255,255,255,.2);padding: 5px 10px;height:20px;line-height:20px;color: #fff;border-radius: 25px;margin: 0 0 10px 20px;display: inline-block;font-size: 13px;}
+
+.table {width: 100%; text-align: center;line-height: 30px}
+.thead,.stu {display: -webkit-box; display: -webkit-flex; display: flex;}
+.thead view,
+.tbody .stu view  {width: 70px;}
+.thead view {border-bottom: 1px solid #e4d28c;padding: 10px 0;font-weight: normal;color: #6898b5;}
+.tbody .stu {border-bottom: 1px solid #e7e7e7;padding: 10px 0;font-size: 14px;}
+.cell_bd picker,input {width: 95%;background: #eaeaea;border: 0;border-radius: 30px; height: 30px;text-align: center;color: #5c5c5c;line-height: 30px}
+.tbody .cell_bd .cell_text{width: 95%;background: #eaeaea;border: 0;border-radius: 30px; height: 30px;text-align: center;color: #5c5c5c;line-height: 30px;white-space: nowrap;overflow-x: scroll;}
+.set {flex:1;}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+.picker-inner{
+  height: 30px;
+}
+.button {width: 100%; margin:20px 0;}
+.model {z-index: 9999; padding: 0;}
+.model .c {padding: 5px 0;}
+.model #other {padding-top: 10px}
+.model .schoollist {
+  height: 200px;
+  /*background: red;*/
+  /*overflow: hidden;*/
+  overflow-y: scroll
+}
+.model .hdSearch input {height: 35px;}
+.button .btn{
+  width: 80%;
+  display: block;
+  margin : 0 auto;
+}
+.hidInp{
+  width: 0;
+  height: 0;
+}
+.otherSchool .hide,
+.school.view_show {display: none}
+.otherSchool .hide.view_show {display: block}
+.otherSchool input {width: 100%}
+.tipShow{
+  display: block;
+}
+.tipShow{
+  display: none;
+}
+.hideInp{
+  width: 0;
+  height: 0;
+}

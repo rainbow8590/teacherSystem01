@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="head" id="head-fixed">
+     <text wx:for="{{headList}}" wx:key="{{item}}">{{item}}</text> 
+  </view>
+  <!-- <view>蓝色高度:{{headH}},表头高度:{{theadH}}</view>
+  <view>表格内容宽度：{{contentW}},表格内容高度：{{contentH}}</view>
+  <view>手机宽度：{{windowWidth}},手机高度：{{windowHeight}}</view>
+  <view>left:{{scrollL}},top:{{scrollT}}</view> -->
+  <!-- 表格数据 -->
+  <view class='table' 
+    bindtouchstart='touchstart'
+    bindtouchmove='touchmove'
+    bindtouchend='touchend'
+    style="height:{{heigh+37}}px" 
+  >
+    <!-- 表格标题 -->
+    <view class='sideBar flex' id="tab-fixed">
+       <!-- 固定列 -->
+       <view class="thead  thead-left flex">
+         <view class="name">姓名</view>
+         <view class="set">多科在读</view>
+       </view>
+       <!-- 活动列 -->
+       <view class='thead thead-right'>  
+          <view class="thead-right-wrap" style="left:{{scrollL}}px;width:{{contentW}}px;">
+            <view class="school">所在学校</view>
+            <view class="name">实验班</view>
+           <view class="name" wx:for="{{lessonNumArr}}" wx:for-index="index">第{{index+2}}讲</view>
+         </view>
+       </view>
+    </view>
+    <!-- 表格内容 -->
+    <view class="tbody">
+      <view style="height:{{heigh}}px" class="scrollCon">
+        <view class="scroll-item">
+          <view class="tbody-fixed">
+            <view class="tbody-fixed-content" style="top:{{scrollT}}px">
+              <view class="thead tbody-left flex" wx:for="{{infos}}" wx:for-item="info"  wx:key="id">
+                <view class="name">{{info.sName}}</view>
+                <view class="set" catchtap="showTip" data-id="{{index}}">
+                  {{info.isOthersubject}}
+                  <view class="{{index == 0?'tip1':'tip'}} {{currentItem == index?'tipShow':'tipHide'}}" wx:if="{{info.sOthersubject!= null}}" style="left:{{}}px">
+                    {{info.sOthersubject}}
+                    <view class="{{index == 0?'bdr1_1':'bdr1'}} "></view>
+                    
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="tbody-scroll">
+            <view class="tbody-scroll-content" style="left:{{scrollL}}px;top:{{scrollT}}px;width:{{contentW}}px" id="content">
+              <view class='thead tbody-right flex' wx:for="{{infos}}" wx:for-item="info" wx:key="id">  
+                <view class="school"><text>{{info.sSchool}}</text></view>
+                <view class="name">{{info.sExperimentalType}}</view>
+                <view wx:for="{{info.sScore}}" wx:for-item="score" class="name">{{score}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

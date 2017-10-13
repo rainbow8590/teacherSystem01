@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="page-nav">
+      <view class="logo tac"><image src="{{src}}" mode='widthFix' ></image></view>
+      <view class="list">
+        <view class='flex s1'><navigator url="/pages/SchoolCollection/SchoolCollection" hover-class="navigator-hover "><text></text></navigator></view>
+        <view class='flex s2'><navigator url="/pages/SelectClassEntryGrade/SelectClassEntryGrade" hover-class="navigator-hover"></navigator></view>
+        <view class='flex s3'><navigator url="/pages/SelectClass/SelectClass" hover-class="navigator-hover"></navigator></view>
+        <view class='flex s4'><navigator url="/pages/PicClassList/PicClassList" hover-class="navigator-hover"></navigator></view>
+      </view>
+  </view>
+  
+</view>

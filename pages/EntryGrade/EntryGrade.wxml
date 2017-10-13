@@ -1,0 +1,34 @@
+<!--pages/ClassCode/ClassCode.wxml-->
+<view class='container page-chengji'>
+  <view class="head">
+     <text wx:for="{{headList}}" wx:key="{{item}}">{{item}}</text> 
+  </view>
+  <form class="forminputs" bindsubmit="saveScore">
+  <view class='table'>
+    <view class='thead'>
+      <view>序号</view>
+      <view>姓名</view>
+      <view class="set">得分</view>
+    </view>
+    <view class='tbody'>
+      <view class="stu" wx:for="{{studentsList}}"  wx:for-index="index">
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sClassCode]" value="{{item.sClassCode}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][nLessonNo]" value="{{item.nLessonNum}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sCardCode]" value="{{item.sCardCode}}" />
+        <input type="hidden" class="hidInp" name="datas[{{index}}][sStudentCode]" value="{{item.sStudentCode}}"/>
+        <input type="hidden" class="hidInp" name="datas[{{index}}][ScoreType]" value="{{item.ScoreType}}" />
+        <view>{{index + 1}}</view>
+        <view>{{item.sName}}</view>
+        <view class="set">
+          <input type="number" bindblur="checkScore" name="datas[{{index}}][Score]" value="{{item.Score}}" class="cell_bd" placeholder="{{tipText}}" />
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="button tac">
+    <button class="btn btn2"  formType="submit">确认</button>
+  </view>
+  </form>
+
+</view>

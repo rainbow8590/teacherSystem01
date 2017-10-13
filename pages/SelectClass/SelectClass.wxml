@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="page page-banji">
+      <view class="tit"><text>{{teacherName}}</text>老师</view>
+      <view class='section'>
+        <view class='flex'>
+          <view class='label'>学年： </view>
+          <view class="cell__bd flex__item">
+            <picker mode="date" value="{{date}}" start="2016" end="2017" fields="year" bindchange="bindDateChange">
+                <view class="weui-input inputs">{{date}}年</view>
+              </picker>
+          </view>
+        </view>
+        <view class='flex'>
+          <view class='label'>学期： </view>
+          <view class="cell__bd flex__item">
+            <picker bindchange="bindPickerChange" value="{{index1-1}}" range="{{array}}">
+              <view class="weui-input inputs">{{array[index1-1]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class='flex'>
+          <view class='label'>班级： </view>
+          <view class="cell__bd flex__item">
+            <picker bindchange="bindPicker2Change" value="{{index2}}" range="{{classes}}">
+              <view class="weui-input inputs">{{classes[index2]}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class='flex'>
+          <view class='label'>课节： </view>
+          <view class="cell__bd flex__item">
+            <picker bindchange="bindPicker3Change" value="{{index3}}" range="{{array3}}">
+              <view class="weui-input inputs">{{array3[index3]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="button">
+          <button id="sub" type="primary" bindtap="setStorage" class="btn btn2 tac" >确认</button>
+        </view>
+      </view>
+  </view>
+
+  <view class="menuIco" bindtap="powerDrawer" data-statu="open"></view>
+  <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+  <view animation="{{animationData}}" class="mainMenu drawer_attr_box" wx:if="{{showModalStatus}}">
+    <view class="menu">
+        <view class="userinfo">
+            <view class="Avatar">
+                <image src="../images/noface.png" mode='widthFix'></image>
+            </view>
+            <view class="name">{{teacherName}}</view>
+        </view>
+        <view class="con"><navigator open-type="redirect" url='/pages/SchoolCollection/SchoolCollection'>学校信息收集</navigator></view>
+        <view class="con"><navigator open-type="redirect" url='/pages/SelectClassEntryGrade/SelectClassEntryGrade'>学员资料查询</navigator></view>
+        <view class="con"><navigator open-type="redirect" url='/pages/SelectClass/SelectClass'>班级成绩录入</navigator></view>
+        <view class="con"><navigator open-type="redirect" url='/pages/PicClassList/PicClassList'>定制图片生成</navigator></view>
+        <view class="quit tac"><view bindtap="unlogin" class="btn">退出登录</view></view>
+    </view>
+  </view>
+
+</view>

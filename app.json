@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/SelectClassEntryGrade/SelectClassEntryGrade",
+    "pages/RestPassword/RestPassword",
+    "pages/SchoolCollection/SchoolCollection",
+    "pages/serviceInd/serviceInd",
+    "pages/SelectClass/SelectClass",
+    "pages/EntryGrade/EntryGrade",
+    "pages/EntryGradeResult/EntryGradeResult",
+    "pages/CollectSchool/CollectSchool",
+    "pages/PicClassList/PicClassList",
+    "pages/ClassCode/ClassCode"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#74acd9",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 60000
+  }
+}

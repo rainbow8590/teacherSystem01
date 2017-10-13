@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-login">
+    <view class='logo'>
+        <image src='{{src}}' mode="{{mode}}">{{text2}}</image>
+    </view>
+    <view class='login-section'>
+      <form bindsubmit="setStorage">
+        <view class="login-input flex">
+          <input type="number" name="moblie" value="{{moblie}}" bindinput="moblieChange" placeholder-class="placeholderC" placeholder="教师系统账号\手机号"  class="input flex__item" />
+        </view>
+        <view class="login-input flex">
+          <input type="text" password name="password" value="{{password}}" bindinput="passwordChange"  placeholder-class="placeholderC" placeholder="教师系统密码" class="input flex__item" />
+        </view>
+
+        <view class='radio'>
+          <radio-group bindchange="getKind">
+            <label class="radio">
+              <radio value="2" checked="true"/>教师
+            </label>
+            <label class="radio">
+              <radio value="1" />助教
+            </label>
+           </radio-group>
+        </view>
+       
+        <view class="button"><button  type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  class="btn btn2" formType="submit">登　录</button></view>
+      </form>
+      <view class='regLink'>
+        <navigator url="/pages/RestPassword/RestPassword" hover-class="navigator-hover">找回密码</navigator>
+      </view> 
+    </view>
+  </view>
+</view>
